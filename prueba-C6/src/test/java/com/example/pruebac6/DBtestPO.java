@@ -27,7 +27,9 @@ public class DBtestPO {
         homePage.waitForPageLoad();
 
         homePage.enterCity("Punta del Este");
+        homePage.waitForPageLoad();
         homePage.clickSearchButton();
+        homePage.waitForPageLoad();
 
         assertTrue(homePage.verifyMessageContains("CASA DE PLAYA"));
     }
@@ -49,7 +51,7 @@ class HomePage {
     }
 
     public void waitForPageLoad() throws InterruptedException {
-        Thread.sleep(1000); // Adjust this as needed
+        Thread.sleep(3000); // Adjust this as needed
     }
 
     public void enterCity(String city) {
@@ -67,6 +69,7 @@ class HomePage {
     public boolean verifyMessageContains(String expectedText) {
         WebElement categoryElement = driver.findElement(categoryLocator);
         String actualMessage = categoryElement.getText();
+        System.out.println("Actual Message: " + actualMessage);
         return actualMessage.contains(expectedText);
     }
 }
