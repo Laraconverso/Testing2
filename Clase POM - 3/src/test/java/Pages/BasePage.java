@@ -18,7 +18,7 @@ public class BasePage {
      }
 
      public void setup() {
-          System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
+          System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver");
           driver.manage().window().maximize();
      }
 
